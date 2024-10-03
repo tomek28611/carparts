@@ -45,7 +45,7 @@ public class ProductController {
         return searchRepository.findByText(text);
     }
 
-    @PostMapping("/products/add")
+    @PostMapping("/admin/products/add")
     public Product addProduct(
             @RequestPart("product") String productJson,
             @RequestPart("images") List<MultipartFile> images) {
@@ -67,7 +67,7 @@ public class ProductController {
 
 
 
-    @PutMapping("/products/{id}")
+    @PutMapping("/admin/products/{id}")
     public Product updateProduct(
             @RequestPart("product") String productJson,
             @RequestPart(value = "images", required = false) List<MultipartFile> images,
@@ -86,7 +86,7 @@ public class ProductController {
     }
 
 
-    @DeleteMapping("/products/{id}")
+    @DeleteMapping("/admin/products/{id}")
     public void deleteProduct(@PathVariable String id) {
         productService.deleteProduct(id);
     }

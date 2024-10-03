@@ -14,7 +14,7 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")  // Apply CORS to all endpoints
-                        .allowedOrigins("http://localhost:3000", "https://carparts-admin-dashboard.vercel.app") // Allow requests from both URLs
+                        .allowedOrigins("http://localhost:3000", "https://carparts-admin-dashboard.vercel.app", "https://car-parts-front.vercel.app") // Allow requests from both URLs
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Allow all relevant HTTP methods
                         .allowedHeaders("*") // Allow all headers
                         .allowCredentials(true); // Allow sending credentials (optional)
